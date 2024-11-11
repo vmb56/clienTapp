@@ -1,5 +1,4 @@
-package com.example.clientapp
-
+package com.example.clientapp.ui.theme
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -36,8 +35,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
-import com.example.clientapp.ui.theme.ClienTappTheme
-class MainActivity : ComponentActivity() {
+import com.example.clientapp.R
+
+class SignUp : ComponentActivity() {
     private val mainViewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,9 +68,9 @@ fun LoadingScreen() {
 fun Cit(){
     Box()
     {
-        Text(text= "Identification",
-        fontSize=28.sp,
-         fontWeight = FontWeight.Bold,
+        Text(text= "Sign UP",
+            fontSize=28.sp,
+            fontWeight = FontWeight.Bold,
             modifier=Modifier.fillMaxSize(),
             color= Color.Black,
             textAlign = TextAlign.Center)
@@ -96,7 +96,7 @@ fun FirstPage() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp),
-           contentAlignment= Alignment.Center
+            contentAlignment= Alignment.Center
         ) {
 
             UsernamePasswordForm()
@@ -107,7 +107,7 @@ fun FirstPage() {
                 .padding(16.dp),
             contentAlignment= Alignment.Center
         ){
-Cit()
+            Cit()
         }
     }
 
@@ -123,14 +123,14 @@ fun UsernamePasswordForm() {
             .fillMaxWidth()
             .padding(16.dp),
         horizontalAlignment =Alignment.CenterHorizontally
-        
+
     ) {
         LogoSection()
         Spacer(modifier=Modifier.height(8.dp))
 
         Text(text = "Username",
             style = MaterialTheme.typography.labelMedium,
-        modifier=Modifier.align(Alignment.Start),
+            modifier=Modifier.align(Alignment.Start),
             fontWeight = FontWeight.Bold,
             fontSize=24.sp)
         TextField(
@@ -202,14 +202,14 @@ fun UsernamePasswordForm() {
 //le logo de profile
 @Composable
 fun LogoSection(){
-val img = painterResource(R.drawable.logo_section)
+    val img = painterResource(R.drawable.logo_section)
     Image(
         painter=img,
         contentDescription="LogoSection",
         modifier=Modifier
             .size(110.dp)
-        .clip(CircleShape),
-    contentScale= ContentScale.Crop
+            .clip(CircleShape),
+        contentScale= ContentScale.Crop
 
     )
 }
@@ -232,3 +232,4 @@ fun GreetingPreview() {
         FirstPage()
     }
 }
+
